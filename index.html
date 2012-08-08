@@ -1,0 +1,238 @@
+<html>
+<head>
+<title>Tor Research Home</title>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<link href="css/stylesheet-ltr.css" type="text/css" rel="stylesheet">
+<link href="/images/favicon.ico" type="image/x-icon" rel="shortcut icon">
+</head>
+<body>
+
+<table class="banner" border="0" cellpadding="0" cellspacing="0" summary="">
+<tr>
+  <td class="banner-left">
+    <a href="index.html">
+      <img src="/images/top-left.png" alt="Click to go to home page"
+           width="193" height="79"></a></td>
+  <td class="banner-middle">
+    Tor Research<br></td>
+  <td class="banner-right"></td>
+</tr>
+</table>
+
+<div class="center">
+<div class="main-column">
+<h2>Tor Research Home</h2>
+<br>
+
+<p>Many people around the world are doing research on how to improve the
+Tor design, what's going on in the Tor network, and more generally on
+attacks and defenses for anonymous communication systems.
+This page summarizes the resources we provide to help make your Tor
+research more effective.
+The best way to reach us about research is through the
+<a href="mailto:tor-assistants@lists.torproject.org">tor-assistants</a>
+list.</p>
+
+<ul>
+
+<li>
+<b>Data.</b>
+We've been <a href="https://metrics.torproject.org/data.html">collecting
+data to learn more about the Tor network</a>: how many relays and
+clients there are in the network, what capabilities they have, how
+fast the network is, how many clients are connecting via bridges,
+what traffic exits the network, etc. We are also developing
+tools to process these huge data archives and come up with
+<a href="https://metrics.torproject.org/graphs.html">useful
+statistics</a>.
+Let us know what other information you'd like to
+see, and we can work with you to help make sure it gets collected
+<a href="papers/wecsr10.pdf">safely</a>
+and robustly.
+</li>
+
+<li>
+<b>Analysis.</b>
+If you're investigating Tor, or solving a Tor-related problem,
+<i>_please_</i> talk to us somewhere along the way &mdash; the earlier
+the better. These days we review too many conference paper submissions
+that make bad assumptions and end up solving the wrong problem. Since
+the Tor protocol and the Tor network are both moving targets, measuring
+things without understanding what's going on behind the scenes is going
+to result in bad conclusions. In particular, different groups often
+unwittingly run a variety of experiments in parallel, and at the same
+time we're constantly modifying the design to try new approaches. If
+you let us know what you're doing and what you're trying to learn,
+we can help you understand what other variables to expect and how to
+interpret your results.
+</li>
+
+<li>
+<b>Measurement and attack tools.</b>
+We're building a
+<a href="https://metrics.torproject.org/tools.html">repository</a> of tools
+that can be used to measure, analyze, or perform attacks on Tor. Many
+research groups end up needing to do similar measurements (for example,
+change the Tor design in some way and then see if latency improves),
+and we hope to help everybody standardize on a few tools and then make
+them really good. Also, while there are some really neat Tor attacks
+that people have published about, it's hard to track down a copy of
+the code they used. Let us know if you have new tools we should list,
+or improvements to the existing ones. The more the better, at this stage.
+</li>
+
+<li>
+<b>We need defenses too &mdash; not just attacks.</b>
+Most researchers find it easy and fun to come up with novel attacks on
+anonymity systems. We've seen this result lately in terms of improved
+congestion attacks, attacks based on remotely measuring latency or
+throughput, and so on. Knowing how things can go wrong is important,
+and we recognize that the incentives in academia aren't aligned with
+spending energy on designing defenses, but it sure would be great to
+get more attention to how to address the attacks. We'd love to help
+brainstorm about how to make Tor better. As a bonus, your paper might
+even end up with a stronger "countermeasures" section.
+</li>
+
+<li>
+<b>In-person help.</b>
+If you're doing interesting and important Tor research and need help
+understanding how the Tor network or design works, interpreting your
+data, crafting your experiments, etc, we can send a Tor researcher to
+your doorstep. As you might expect, we don't have a lot of free time;
+but making sure that research is done in a way that's useful to us is
+really important. So let us know, and we'll work something out.
+</li>
+
+</ul>
+
+<a id="Groups"></a>
+<h2><a class="anchor" href="#Groups">Research Groups</a></h2>
+<br>
+
+<p>Interested to find other anonymity researchers? Here are some
+research groups you should take a look at.</p>
+
+<ul>
+<li>Ian Goldberg's <a href="http://crysp.uwaterloo.ca/">CrySP</a> group
+at Waterloo.
+</li>
+<li><a href="http://www-users.cs.umn.edu/~hopper/">Nick Hopper</a>'s
+group at UMN.
+</li>
+<li><a href="http://www.hatswitch.org/~nikita/">Nikita Borisov</a>'s
+group at Illinois.
+</li>
+<li>Micah Sherr's <a href="https://security.cs.georgetown.edu/">SecLab</a>
+group at Georgetown.
+</li>
+<li>Matt Wright's <a href="http://isec.uta.edu/">iSec</a> group at
+UTA.
+</li>
+</ul>
+
+<a id="Ideas"></a>
+<h2><a class="anchor" href="#Ideas">Research Ideas</a></h2>
+<br>
+
+<p>
+If you're interested in anonymity research, you must make it to the
+<a href="http://petsymposium.org/">Privacy Enhancing Technologies
+Symposium</a>. Everybody who's anybody in the anonymity research world
+will be there. Stipends are generally available for people whose presence
+will benefit the community.
+</p>
+
+<p>To get up to speed on anonymity research, read <a
+href="http://freehaven.net/anonbib/">these papers</a> (especially the
+ones in boxes).
+We also keep lists of <a href="papers.html">papers</a> and
+<a href="techreports.html">tech reports</a> that are (co-)authored by Tor
+developers.</p>
+
+<p>We need people to attack the system, quantify defenses,
+etc. Here are some example projects:</p>
+
+<ul>
+
+<li>What algorithm should we use to assign Guard flags such that a)
+we assign the flag to as many relays as possible, yet b) we minimize
+the chance that Alice will use an attacker's node as a guard? See the
+<a href="https://blog.torproject.org/research-problem-better-guard-rotation-parameters">blog
+post</a> for details.
+</li>
+
+<li>For various diversity metrics, how has the diversity of
+the Tor network changed over time? How robust is it to change or
+attack? These results can help us make better design decisions. See the <a
+href="https://blog.torproject.org/research-problem-measuring-safety-tor-network">blog post</a>
+for details.
+</li>
+
+<li>If we prevent the really loud users from using too much of the Tor
+network, how much can it help? We've instrumented Tor's entry relays
+so they can rate-limit connections from users, and we've instrumented
+the directory authorities so they can change the rate-limiting
+parameters globally across the network. Which parameter values improve
+performance for the Tor network as a whole? How should relays adapt
+their rate-limiting parameters based on their capacity and based on
+the network load they see, and what rate-limiting algorithms will work
+best? See the <a
+href="https://blog.torproject.org/research-problem-adaptive-throttling-tor-clients-entry-guards">blog
+post</a> for details.
+</li>
+
+<li>Right now Tor clients are willing to reuse a given circuit for ten
+minutes after it's first used. The goal is to avoid loading down the
+network with too many circuit creations, yet to also avoid having
+clients use the same circuit for so long that the exit node can build a
+useful pseudonymous profile of them. Alas, ten minutes is probably way
+too long, especially if connections from multiple protocols (e.g. IM and
+web browsing) are put on the same circuit. If we keep fixed the overall
+number of circuit extends that the network needs to do, are there more
+efficient and/or safer ways for clients to allocate streams to circuits,
+or for clients to build preemptive circuits? Perhaps this research item
+needs to start with gathering some traces of what requests typical
+clients try to launch, so you have something realistic to try to optimize.
+</li>
+
+<li>The "website fingerprinting attack": make a list of a few
+hundred popular websites, download their pages, and make a set of
+"signatures" for each site. Then observe a Tor client's traffic. As
+you watch him receive data, you quickly approach a guess about which
+(if any) of those sites he is visiting. First, how effective is
+this attack on the deployed Tor design? The problem with all the
+previous attack papers is that they look at timing and counting of
+IP packets on the wire. But OpenSSL's TLS records, plus Tor's use of
+TCP pushback to do rate limiting, means that tracing by IP packets
+produces very poor results. The right approach is to realize that
+Tor uses OpenSSL, look inside the TLS record at the TLS headers, and
+figure out how many 512-byte cells are being sent or received. Then
+start exploring defenses: for example, we could change Tor's cell
+size from 512 bytes to 1024 bytes, we could employ padding techniques
+like <a href="http://freehaven.net/anonbib/#timing-fc2004">defensive
+dropping</a>, or we could add traffic delays. How much of an impact do
+these have, and how much usability impact (using some suitable metric)
+is there from a successful defense in each case?</li>
+
+<!--
+<li>
+Path selection algorithms, directory fetching schedules for Tor-on-mobile
+that are compatible anonymity-wise with our current approaches.
+</li>
+
+-->
+
+<li>More coming soon. See also the "Research" section of the <a
+href="https://www.torproject.org/getinvolved/volunteer.html.en#Research">volunteer</a> page for
+other topics.
+</li>
+
+</ul>
+
+</div>
+</div>
+
+</body>
+</html>
+
