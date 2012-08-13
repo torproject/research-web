@@ -110,35 +110,6 @@ really important. So let us know, and we'll work something out.
 
 </ul>
 
-<a id="Groups"></a>
-<h2><a class="anchor" href="#Groups">Research Groups</a></h2>
-<br>
-
-<p>Interested to find other anonymity researchers? Here are some
-research groups you should take a look at.</p>
-
-<ul>
-<li>Ian Goldberg's <a href="http://crysp.uwaterloo.ca/">CrySP</a> group
-at Waterloo.
-</li>
-<li><a href="http://www-users.cs.umn.edu/~hopper/">Nick Hopper</a>'s
-group at UMN.
-</li>
-<li><a href="http://www.hatswitch.org/~nikita/">Nikita Borisov</a>'s
-group at Illinois.
-</li>
-<li>Micah Sherr's <a href="https://security.cs.georgetown.edu/">SecLab</a>
-group at Georgetown.
-</li>
-<li>Matt Wright's <a href="http://isec.uta.edu/">iSec</a> group at
-UTA.
-</li>
-</ul>
-
-<a id="Ideas"></a>
-<h2><a class="anchor" href="#Ideas">Research Ideas</a></h2>
-<br>
-
 <p>
 If you're interested in anonymity research, you must make it to the
 <a href="http://petsymposium.org/">Privacy Enhancing Technologies
@@ -152,86 +123,6 @@ href="http://freehaven.net/anonbib/">these papers</a> (especially the
 ones in boxes).
 We also keep a list of <a href="techreports.html">Tor Tech Reports</a>
 that are (co-)authored by Tor developers.</p>
-
-<p>We need people to attack the system, quantify defenses,
-etc. Here are some example projects:</p>
-
-<ul>
-
-<li>What algorithm should we use to assign Guard flags such that a)
-we assign the flag to as many relays as possible, yet b) we minimize
-the chance that Alice will use an attacker's node as a guard? See the
-<a href="https://blog.torproject.org/research-problem-better-guard-rotation-parameters">blog
-post</a> for details.
-</li>
-
-<li>For various diversity metrics, how has the diversity of
-the Tor network changed over time? How robust is it to change or
-attack? These results can help us make better design decisions. See the <a
-href="https://blog.torproject.org/research-problem-measuring-safety-tor-network">blog post</a>
-for details.
-</li>
-
-<li>If we prevent the really loud users from using too much of the Tor
-network, how much can it help? We've instrumented Tor's entry relays
-so they can rate-limit connections from users, and we've instrumented
-the directory authorities so they can change the rate-limiting
-parameters globally across the network. Which parameter values improve
-performance for the Tor network as a whole? How should relays adapt
-their rate-limiting parameters based on their capacity and based on
-the network load they see, and what rate-limiting algorithms will work
-best? See the <a
-href="https://blog.torproject.org/research-problem-adaptive-throttling-tor-clients-entry-guards">blog
-post</a> for details.
-</li>
-
-<li>Right now Tor clients are willing to reuse a given circuit for ten
-minutes after it's first used. The goal is to avoid loading down the
-network with too many circuit creations, yet to also avoid having
-clients use the same circuit for so long that the exit node can build a
-useful pseudonymous profile of them. Alas, ten minutes is probably way
-too long, especially if connections from multiple protocols (e.g. IM and
-web browsing) are put on the same circuit. If we keep fixed the overall
-number of circuit extends that the network needs to do, are there more
-efficient and/or safer ways for clients to allocate streams to circuits,
-or for clients to build preemptive circuits? Perhaps this research item
-needs to start with gathering some traces of what requests typical
-clients try to launch, so you have something realistic to try to optimize.
-</li>
-
-<li>The "website fingerprinting attack": make a list of a few
-hundred popular websites, download their pages, and make a set of
-"signatures" for each site. Then observe a Tor client's traffic. As
-you watch him receive data, you quickly approach a guess about which
-(if any) of those sites he is visiting. First, how effective is
-this attack on the deployed Tor design? The problem with all the
-previous attack papers is that they look at timing and counting of
-IP packets on the wire. But OpenSSL's TLS records, plus Tor's use of
-TCP pushback to do rate limiting, means that tracing by IP packets
-produces very poor results. The right approach is to realize that
-Tor uses OpenSSL, look inside the TLS record at the TLS headers, and
-figure out how many 512-byte cells are being sent or received. Then
-start exploring defenses: for example, we could change Tor's cell
-size from 512 bytes to 1024 bytes, we could employ padding techniques
-like <a href="http://freehaven.net/anonbib/#timing-fc2004">defensive
-dropping</a>, or we could add traffic delays. How much of an impact do
-these have, and how much usability impact (using some suitable metric)
-is there from a successful defense in each case?</li>
-
-<!--
-<li>
-Path selection algorithms, directory fetching schedules for Tor-on-mobile
-that are compatible anonymity-wise with our current approaches.
-</li>
-
--->
-
-<li>More coming soon. See also the "Research" section of the <a
-href="https://www.torproject.org/getinvolved/volunteer.html.en#Research">volunteer</a> page for
-other topics.
-</li>
-
-</ul>
 
 </div>
 </div>
