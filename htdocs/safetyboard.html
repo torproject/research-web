@@ -1,0 +1,251 @@
+<html>
+<head>
+<title>Tor Research Safety Board</title>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<link href="css/stylesheet-ltr.css" type="text/css" rel="stylesheet">
+<link href="/images/favicon.ico" type="image/x-icon" rel="shortcut icon">
+</head>
+<body>
+
+<table class="banner" border="0" cellpadding="0" cellspacing="0" summary="">
+<tr>
+  <td class="banner-left">
+    <a href="index.html">
+      <img src="/images/top-left.png" alt="Click to go to home page"
+           width="193" height="79"></a></td>
+  <td class="banner-middle">
+    <a href="index.html">Home</a>
+    Safety Board
+    <a href="groups.html">Groups</a>
+    <a href="ideas.html">Ideas</a>
+    <a href="techreports.html">Tech Reports</a>
+  </td>
+  <td class="banner-right"></td>
+</tr>
+</table>
+
+<div class="center">
+<div class="main-column">
+<h2>Tor Research Safety Board</h2>
+<br>
+
+<p><center><i>This page is under construction. Don't believe everything on it yet!</i></center>
+
+<ul>
+<li><a href="#what">What is the Tor Research Safety Board?</a></li>
+<li><a href="#guidelines">What are the safety guidelines?</a></li>
+<li><a href="#how">How can I submit a request for advice?</a></li>
+<li><a href="#examples">What are some example papers that are in-scope?</a></li>
+<li><a href="#who">Who is on the Board?</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+
+<hr>
+<a id="what"></a>
+<h3><a class="anchor" href="#what">What is the Tor Research Safety
+Board?</a></h3>
+<br>
+
+<p>
+We are a group of researchers who study Tor, and who want to <b>minimize
+privacy risks while fostering a better understanding of the Tor network
+and its users</b>. We aim to accomplish this goal in three ways:
+
+<ol>
+<li>developing and maintaining a set of guidelines that researchers can
+use to assess the safety of their Tor research.</li>
+<li>giving feedback to researchers who use our guidelines to assess the
+safety of their planned research.</li>
+<li>teaching program committees about our guidelines, and encouraging
+reviewers to consider research safety when reviewing Tor papers.</li>
+</ol>
+
+<hr>
+<a id="guidelines"></a>
+<h3><a class="anchor" href="#guidelines">What are the safety
+guidelines?</a></h3>
+<br>
+
+<p>
+Here's a start:
+
+<ol>
+<li>Use a test Tor network whenever possible.
+<li>Only attack yourself / your own traffic.
+<li>Only collect data that is safe to make public.
+<li>Don't collect data you don't need (minimization).
+<li>Limit the granularity of data (e.g. use bins or add noise).
+<li>The benefits should outweigh the risks.
+<li>Consider auxiliary data (e.g. third-party data sets) when assessing
+the risks.
+<li>Consider whether the user meant for that data to be private.
+</ol>
+
+<p>
+There's plenty of room for further improvement here. In fact, we think
+this list itself is a really interesting research area. Please help!
+
+<hr>
+<a id="how"></a>
+<h3><a class="anchor" href="#how">How can I submit a request for advice?</a></h3>
+<br>
+
+<p>
+The vision is that you (the researchers) think through the safety
+of your plan, write up an assessment based on our guidelines, and send
+it to us. Then we look it over and advise you about how to make your
+plan safer, how to make your arguments crisper, or what parts really
+seem too dangerous to do. Later (e.g. when your paper gets published) we'll
+encourage you to make your assessment public. Over time we'll grow a
+library of success cases, which will provide best practices guidance
+for being safe, and also provide templates for writing good assessments.
+
+<p>
+We hope that going through this process will help you think clearly
+about the benefits and risks of your experiment. Hopefully our feedback
+on your thoughts will help too. At the same time, this process will help
+Tor by letting us know what research is happening &mdash; which in turn
+can help you, since we might be able to let you know about a concurrent
+experiment that will mess up your results.
+
+<p>
+To best help you, we want to hear about four aspects of your proposed
+experiment or research plan:
+<ol>
+<li>What are you trying to learn, and why is that useful for the
+world? That is, what are the hoped-for benefits of your experiment?
+<li>What exactly is your plan? That is, what are the steps of your
+experiment, what will you collect, how will you keep it safe, and
+so on.
+<li>What attacks or risks might be introduced or assisted because of your
+actions or your data sets, and how well do you resolve each of them? Use
+the "safety guidelines" above to help in the brainstorming and analysis.
+<li>Walk us through why the benefits from item 1 outweigh the remaining
+risks from item 3: why is this plan worthwhile despite the remaining
+risks?
+</ol>
+
+<p>We encourage you to include your assessment as a section of your
+research paper &mdash; one of the goals here is that reviewers on
+program committees come to expect a section in Tor papers that explains
+what mechanisms the researchers used for ensuring privacy risks
+were handled, and argues that the balance between new understanding
+and risk is worthwhile. For space reasons, you might include a streamlined
+version in the main body of the paper and a more detailed version in
+an appendix.
+
+<p>
+In the future, we'd like to come up with a more thorough template for
+self-assessments, to help you make sure you don't miss any critical
+areas. Please let us know what would help you most.
+
+<p>Contact address coming soon. In the meantime, mailing Roger is not
+a terrible plan.
+
+<hr>
+<a id="examples"></a>
+<h3><a class="anchor" href="#examples">What are some example papers that are in-scope?</a></h3>
+<br>
+
+<p>
+This is where the templates and example self-assessments will go.
+
+<hr>
+<a id="who"></a>
+<h3><a class="anchor" href="#who">Who is on the Board?</a></h3>
+<br>
+
+<p>
+The current people who have expressed interest in the board are:
+<ul>
+<li>&lt;a bunch of swell people from the PETS reviewing community,
+whose names I shouldn't add here until they've at least read this draft
+page&gt;</li>
+</ul>
+
+<hr>
+<a id="faq"></a>
+<h3><a class="anchor" href="#faq">FAQ</a></h3>
+<br>
+
+<p><b>Why now?</b>
+The importance of Tor is growing in the world, and interest from
+researchers remains high as ever. Each week we run across a new paper
+that maybe didn't think things through in terms of keeping their users
+safe. We've seen lately that simply having a sensitive data set, even
+if you plan to never give it out, can put users at real risk.
+At the same time, we've seen exciting papers like PrivEx, which show
+that studying how to do research safely can be a research field in itself.
+Now is the perfect time for us to work to shape future research
+so we build habits of safety in our community, and so we help people to
+understand what is possible.
+
+<p><b>What about bad people who don't care about being safe?</b>
+A safety board cannot by itself stop all dangerous Tor research. Plenty
+of people out there don't play the academic game, and some people don't
+care about user safety at all. Our goal here is to support the people
+who want to cooperate, while showing to the world that it's possible to
+do good Tor research safely.
+
+<p><b>Can't I just run Tor relays and do my experiment without telling you?</b>
+Please don't! The directory authorities have been much more conservative
+lately (after the CMU incident in particular) in terms of looking for
+suspicious patterns or behavior, and removing suspicious relays from the
+network. If the directory authority operators know about you, understand
+your research, and can read about why the benefits are worth the risks
+in your case, they will likely leave your relays in place, rather than
+surprising you by kicking your relays out of the network mid experiment.
+
+<p><b>Can I do this assessment and review process even if I'm not writing
+an academic paper?</b>
+Please do! Our goal as stated above is "to minimize privacy risks while
+fostering a better understanding of the Tor network and its users". If
+your end goal is something other than a research paper, that's great too.
+
+<p><b>Is this an ethics board?</b>
+We framed this idea as a safety board, not an ethics board. We think
+safety is a narrower scope: we aim to describe <i>how</i> to be safe,
+and we aim to make it the norm that reviewers and program committees
+expect to see an analysis of why an experiment/measurement is safe. We
+also are not adding new bottlenecks to the research process, such as
+mandating that we have to vet the analysis first &mdash; that's ultimately
+between the researchers and the program committees. We aren't trying to
+replace IRBs or other projects like ethicalresearch.org.
+
+<p><b>What about confidentiality?</b>
+We will keep assessments that we receive confidential in the same
+way that program committees do. You're coming to us much earlier in
+the process (ideally before the research is performed and before the
+paper is written), which we recognize requires more trust. We hope we
+add enough value to your research that you find this tradeoff worthwhile.
+
+<p><b>So you want conferences to adopt your guidelines?</b>
+Not quite. We would be sad if program chairs told their reviewers "Make
+sure the paper follows Tor's guidelines for safe research." We would
+instead like the chairs to tell the reviewers "Make sure the paper has
+performed safe research. If you're unsure what that means, I encourage
+you to read Tor's guidelines to get ideas on what to consider." That is,
+we want the reviewers to always be thinking through, for each paper,
+whether this is a safe or unsafe situation. Reviewers should enforce
+the ethical requirements of the conference they're reviewing for &mdash;
+or their own ethical principles, if the conference neglected to have an
+opinion on the topic. Our goal here is to help them think through what
+to look for.
+
+<p><b>Is Tor going to do this assessment process for its design
+decisions and statistics collection?</b>
+Absolutely! You'll notice a big improvement over the years
+between <a href="https://trac.torproject.org/13988">our
+early statistics collection choices</a> and <a
+href="https://blog.torproject.org/blog/some-statistics-about-onions">our
+later ones</a>. That learning process is part of what led to this
+safety board. We'd like to revisit many of Tor's design choices,
+especially once we've worked through some other examples here. We'd
+love to have your help there.
+
+</div>
+</div>
+
+</body>
+</html>
+
