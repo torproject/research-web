@@ -29,13 +29,11 @@
 <h2>Tor Research Safety Board</h2>
 <br>
 
-<p><center><i>This page is under construction. Don't believe everything on it yet!</i></center>
-
 <ul>
 <li><a href="#what">What is the Tor Research Safety Board?</a></li>
 <li><a href="#guidelines">What are the safety guidelines?</a></li>
 <li><a href="#how">How can I submit a request for advice?</a></li>
-<li><a href="#examples">What are some example papers that are in-scope?</a></li>
+<li><a href="#examples">What are some examples of research that is in-scope?</a></li>
 <li><a href="#who">Who is on the Board?</a></li>
 <li><a href="#faq">FAQ</a></li>
 </ul>
@@ -71,9 +69,11 @@ Here's a start:
 
 <ol>
 <li>Use a test Tor network whenever possible.
-<li>Only attack yourself / your own traffic.
+<li>It's safest to only attack yourself / your own traffic.
 <li>Only collect data that is safe to make public.
 <li>Don't collect data you don't need (minimization).
+<li>Take reasonable security precautions, e.g. about who has access to
+your data sets or experimental systems.
 <li>Limit the granularity of data (e.g. use bins or add noise).
 <li>The benefits should outweigh the risks.
 <li>Consider auxiliary data (e.g. third-party data sets) when assessing
@@ -83,7 +83,9 @@ the risks.
 
 <p>
 There's plenty of room for further improvement here. In fact, we think
-this list itself is a really interesting research area. Please help!
+this list itself is a really interesting research area. One of our next
+steps is to flesh out each of these points with a few paragraphs of
+explanation. Please help!
 
 <hr>
 <a id="how"></a>
@@ -92,7 +94,8 @@ this list itself is a really interesting research area. Please help!
 
 <p>
 The vision is that you (the researchers) think through the safety
-of your plan, write up an assessment based on our guidelines, and send
+of your planned activity, write up an assessment based on our guidelines,
+and send
 it to us. Then we look it over and advise you about how to make your
 plan safer, how to make your arguments crisper, or what parts really
 seem too dangerous to do. Later (e.g. when your paper gets published) we'll
@@ -128,9 +131,9 @@ risks?
 </ol>
 
 <p>We encourage you to include your assessment as a section of your
-research paper &mdash; one of the goals here is that reviewers on
+research paper: one of the goals here is that reviewers on
 program committees come to expect a section in Tor papers that explains
-what mechanisms the researchers used for ensuring privacy risks
+what mechanisms the researchers used for ensuring that privacy risks
 were handled, and argues that the balance between new understanding
 and risk is worthwhile. For space reasons, you might include a streamlined
 version in the main body of the paper and a more detailed version in
@@ -146,7 +149,7 @@ a terrible plan.
 
 <hr>
 <a id="examples"></a>
-<h3><a class="anchor" href="#examples">What are some example papers that are in-scope?</a></h3>
+<h3><a class="anchor" href="#examples">What are some examples of research that is in-scope?</a></h3>
 <br>
 
 <p>
@@ -160,9 +163,16 @@ This is where the templates and example self-assessments will go.
 <p>
 The current people who have expressed interest in the board are:
 <ul>
-<li>&lt;a bunch of swell people from the PETS reviewing community,
-whose names I shouldn't add here until they've at least read this draft
-page&gt;</li>
+<li>George Danezis
+<li>Roger Dingledine
+<li>Tariq Elahi
+<li>Bryan Ford
+<li>Ian Goldberg
+<li>Rob Jansen
+<li>Aaron Johnson
+<li>Damon McCoy
+<li>Wendy Seltzer
+<li>Micah Sherr
 </ul>
 
 <hr>
@@ -209,11 +219,16 @@ your end goal is something other than a research paper, that's great too.
 We framed this idea as a safety board, not an ethics board. We think
 safety is a narrower scope: we aim to describe <i>how</i> to be safe,
 and we aim to make it the norm that reviewers and program committees
-expect to see an analysis of why an experiment/measurement is safe. We
+expect to see an analysis of why an experiment or measurement is safe. We
 also are not adding new bottlenecks to the research process, such as
 mandating that we have to vet the analysis first &mdash; that's ultimately
 between the researchers and the program committees. We aren't trying to
 replace IRBs or other projects like ethicalresearch.org.
+
+<p><b>So I still need to go to my IRB?</b>
+This safety board is orthogonal to the IRB concept. We hope that the
+evaluation process here will help you organize your thoughts for your
+IRB, but it does not replace your IRB process (if you have one).
 
 <p><b>What about confidentiality?</b>
 Unless you tell us otherwise, we will keep assessments that we receive
@@ -226,12 +241,13 @@ add enough value to your research that you find this tradeoff worthwhile.
 <p><b>How will you know the right balance between benefits and risks?</b>
 This is a tough one. We want Tor to get stronger long-term, but we don't
 want to put people into danger to do it. One answer is that most of this
-board is made up of professors and other PETS researchers, who can provide
+board is made up of professors and other online safety, security, and
+privacy researchers, who can provide
 a more neutral perspective on the right balance. The other answer
 is that this process is a feedback loop and we can adapt as we go:
 once successful assessments have gone up on this page, and people are
 including assessments in their papers, everybody else can look at them
-and decide if they struck the right balance.
+and decide if they used the right balance.
 
 <p><b>So you want conferences to adopt your guidelines?</b>
 Not quite. We would be sad if program chairs told their reviewers "Make
@@ -246,7 +262,7 @@ or their own ethical principles, if the conference neglected to have an
 opinion on the topic. Our goal here is to help them think through what
 to look for.
 
-<p><b>Is Tor going to do this assessment process for its design
+<p><b>Is Tor going to do this assessment process for its own design
 decisions and statistics collection?</b>
 Absolutely! You'll notice a big improvement over the years
 between <a href="https://trac.torproject.org/13988">our
