@@ -1,0 +1,195 @@
+
+Date: Thu, 18 Aug 2016 10:47:45 -0700
+From: David Fifield <david@bamsoftware.com>
+To: Roger Dingledine <arma@mit.edu>
+Cc: Lynn Tsai <lynntsai@gmail.com>
+Subject: Tor Research Safety Board: default bridge reachability
+
+We're seeking comments on a continuation of our research on the blocking
+of default Tor Browser bridges. What we've done so far on this subject
+is covered in our FOCI 2016 paper, "Censors' Delay in Blocking
+Circumvention Proxies":
+https://www.bamsoftware.com/proxy-probe/
+
+The short summary of what we want to do is to greatly expand our
+measurement locations, by using existing platforms such as ICLab, OONI,
+or RIPE Atlas. We want to start doing traceroutes in addition to TCP
+reachability. We want to control how new bridges are introduced, in
+order to test specific hypotheses, such as whether there is a difference
+in detection between stable and alpha.
+
+
+== What are you trying to learn, and why is that useful for the world?
+   That is, what are the hoped-for benefits of your experiment?
+
+1. Where the default bridges are blocked, globally. We know that China
+   (eventually) blocks them, and Iran (currently) does not; but we don't
+   know the situation anywhere else.
+2. In places where the default bridges get blocked, the dynamics of
+   blocking, such as how long it takes, its granularity (IP only or
+   IP/port), and whether blocks are eventually removed.
+3. How bridge addresses are discovered (e.g. through traffic analysis,
+   tickets, or source code), and how they are extracted (e.g. manually
+   or through automated parsing).
+
+The overarching, abstract benefit of the experiment is a better
+understanding of censorship, leading to the development of better
+informed circumvention.
+
+The latest bridge users' guide
+(https://blog.torproject.org/blog/breaking-through-censorship-barriers-even-when-tor-blocked)
+recommends using meek to users in China, because obfs4 is blocked. This
+research would let us know whether to expand that advice beyond China.
+
+By comparing reachability timelines across many censors, we may find
+evidence for or against censors sharing a common data source. For
+example, if two countries block a set of bridges at the same moment, it
+is probably because there is something in common in their detection.
+
+We may uncover specific operational weaknesses of censors that can be
+exploited. To choose an invented but plausible scenario, maybe a censor
+only does black-box testing of new bundles on the day of release: in
+that case, the browser could avoid connecting to a subset of bridges
+until after a certain date.
+
+If we are able to reachability publish data online on a frequently
+updated basis, someone could use it to build a Weather-like service that
+notifies operators of default bridges when their bridge stops running.
+This happened a few times already: some of the default bridges stopped
+running because of lost iptables rules after a reboot, and we were the
+first to notice, only because we were looking at the graphs every once
+in a while. (This would not always be possible using only Collector
+data, because for example the bridge might be running, but its obfs4
+port closed because of a firewall misconfiguration.)
+
+
+== What exactly is your plan? That is, what are the steps of your
+   experiment, what will you collect, how will you keep it safe, and so
+   on.
+
+So far, we have only run from a handful of VPSes, never more than 4 at a
+time. We only had visibility into the U.S., China, and Iran. We
+carefully watched for the introduction of new obfs4 bridges (in some
+cases being privately informed in advance), and added them to a probe
+list, which got probed every 20 minutes by a cron job on the VPSes.
+
+We want to greatly expand our probe sites, by using existing measurement
+platforms such as ICLab, OONI, or RIPE Atlas. We hope to be able to
+measure from dozens or hundreds of diverse locations. We have already
+talked to ICLab and they are willing to probe our destinations from
+their endpoints, which mostly consist of commercial VPNs in various
+countries. The probes will consist of periodic TCP connections to Tor
+Browser default obfs4 bridges (released and not-yet-released) and
+control destinations. We want to start doing traceroutes as well.
+
+We expect that the TCP reachability data we collect will be similar to
+what we have collected so far. It looks like this:
+	date,site,host,port,elapsed,success,errno,errmsg
+	1449892115.2,bauxite,178.209.52.110,443,10.0101830959,False,None,timed out
+	1449901202.36,eecs-login,192.30.252.130,443,0.0761489868164,True,,
+	1450858800.18,eecs-login,109.105.109.165,24215,0.189998865128,False,146,[Errno 146] Connection refused
+For traceroutes we will collect hop information (perhaps with some hops
+obscured; see the risks in the next section). We expect to be able to
+publish everything we collect in an immediate and ongoing basis.
+
+We also want to test some specific hypotheses by controlling the
+circumstances of bridge release. Here are specific experiments we have
+thought of (see corresponding risks in the next section):
+a. Rotating bridge ports with every release. Since the GFW blocks based
+   on IP/port, we can try just changing the port number of each bridge
+   in every release (using iptables forwarding for example).
+b. Putting different subsets of bridges in stable and alpha releases. We
+   saw that Orbot-only bridges did not get blocked; we wonder if
+   stable-only or alpha-only bridges also will not get blocked.
+c. Leaving a bridge commented out in bridge_prefs.js. This may help us
+   distinguish between black-box testing and manual source code review.
+
+
+== What attacks or risks might be introduced or assisted because of your
+   actions or your data sets, and how well do you resolve each of them?
+
+The main risk is potentially enabling censors to discover new bridge
+addresses early, by monitoring our probe sites. Even though "default
+bridges" are conceptually broken, they do in fact work for many people,
+and we wouldn't want to reduce their utility.
+
+In our research so far, we've identified a number of ways that censors
+can discover new bridges: by watching the bug tracker, by reading source
+code, or by inspecting releases. Whenever possible, we want to start
+monitoring new bridges even before they enter the bug tracker. If a
+censor discovers one of our probe sites (which would not be hard to do),
+then they could watch for new addresses being connected to and add them
+to a blocklist. An adversary keeping netflow records could identify
+probe sites retroactively: download Tor Browser and get the new bridges,
+then find the clients that made the earliest connections to those
+addresses.
+
+We mitigate this risk partially by only testing default bridges, not
+secret BridgeDB bridges. That way, even if a censor discovers them, it
+doesn't affect users of secret bridges. Also, we suspect that, because
+default bridges are, in theory, easily discoverable, adding another
+potential discovery mechanism of medium difficult does not greatly
+increase the risk of their being blocked.
+
+If early blocking of bridges as a result of our experiment becomes a
+problem, we can adjust the protocol, for example not to monitor bridges
+in advance of their ticket being filed.
+
+Our heretofore published data do not include the IP addresses of the
+probe locations. The people who supplied us with the probe locations
+asked us not to reveal them. Traceroute will make it harder to conceal
+the source of probes in our published data. We can, for example, omit
+the first few hops in each trace, but we don't know the best practices
+along these lines. The potential harm to probe site operators is
+probably less when we use existing measurement platforms rather than
+VPSes acquired through personal contacts.
+
+Our results may be contaminated by other experiments being run from the
+same source address. The measurement platforms we propose to use already
+are running various other experiments, so they may be treated
+differently by firewalls. The most likely wrong outcome is that we
+falsely detect a bridge being blocked, when it is really the client
+address being blocked (because it is a VPN node, for example). The risk
+goes in the other direction as well: our experiment might affect others
+running on the same endpoint.
+
+Here are the risks related to testing the specific bridge-blocking
+hypotheses enumerated in the previous section:
+a. The risk in rotating bridge ports is that eventually the censor
+   catches on to the pattern and develops more sophisticated, automated
+   blocking. If the censor doesn't react, it means we have better
+   reachability; but if it does, we lose what small window of
+   post-release reachability we have.
+b. The risk in segregating bridge addresses across stable and alpha is
+   that a network observer can tell which a user is running by observing
+   what addresses they connect to. This may, for example, enable them to
+   target an exploit that only works on a specific version.
+c. The risk in playing games like commenting out bridge lines is slight:
+   a commented-out bridge may get blocked even before it has had any
+   real users.
+
+
+== Walk us through why the benefits from item 1 outweigh the remaining
+   risks from item 3: why is this plan worthwhile despite the remaining
+   risks? 
+
+The main risk, bridge discovery by censors, has low potential harm, and
+can be mitigated if necessary by changing when we start monitoring
+bridges, or even ceasing the experiment altogether. The risk of our
+measurements is probably less than that of even having default bridges
+in the first place, because our probes are not connected to any
+real-world circumventor.
+
+The risks associated with our specific bridge-blocking hypotheses are
+variable, and we would appreciate discussion on them. The one we planned
+to try first is the commenting-out one, because it seems to have the
+best risk/reward tradeoff.
+
+Incidentally, OONI already has a bridge_reachability nettest that is
+similar to what we have proposed:
+https://ooni.torproject.org/nettest/tor-bridge-reachability/
+However their bridge list is not up to date,
+https://gitweb.torproject.org/ooni-probe.git/tree/var/example_inputs/bridges.txt?id=v1.6.1
+and a perusal of http://measurements.ooni.torproject.org/ shows that the
+test is not being run regularly.
+
