@@ -1,10 +1,7 @@
 
 Date: Fri, 16 Dec 2016 16:54:52 +0100
 From: "M. Tariq Elahi" <Tariq.Elahi@esat.kuleuven.be>
-To: tor-research-safety@lists.torproject.org, david@bamsoftware.com,
-        lynntsai@gmail.com, QI ZHONG <zhongqi92@berkeley.edu>
-Subject: Re: [tor-research-safety] (FWD) Tor Research Safety Board: default
-        bridge reachability
+Subject: Re: Tor Research Safety Board: default bridge reachability
 
 Yesterday, I wrote to David et al. with a short summary of our review.
 The tl;dr was that we (Damon McCoy and I) don't see anything

@@ -1,8 +1,6 @@
 
 Date: Thu, 18 Aug 2016 10:47:45 -0700
 From: David Fifield <david@bamsoftware.com>
-To: Roger Dingledine <arma@mit.edu>
-Cc: Lynn Tsai <lynntsai@gmail.com>
 Subject: Tor Research Safety Board: default bridge reachability
 
 We're seeking comments on a continuation of our research on the blocking
