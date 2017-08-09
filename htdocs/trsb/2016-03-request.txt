@@ -1,0 +1,67 @@
+Date: Wed, 26 Oct 2016 19:10:45 -0400
+From: Kymberlee McMaster <kymberlee.mcmaster@gmail.com>
+Subject: Re: Tor Research Safety Board
+
+Please see below for our answers to the questions on the website.
+
+   - What are you trying to learn, and why is that useful for the world?
+   That is, what are the hoped-for benefits of your experiment?
+   - Team DIRE plans to analyze major events relating to the Dark Internet
+      and the substituent community response, the culture of the Dark Internet
+      community, and bitcoin's use as a form of currency in Dark Internet
+      marketplaces. The communication of a community during and after events can
+      provide insight into the culture of the people immersed in that community.
+      In order to understand the culture found on Dark Internet marketplaces,
+      Team DIRE plans to study the communication among individuals within the
+      Dark Internet community during events, such as the shutdown of a popular
+      marketplace.
+      - Our goal is to answer the following question: How does the
+      communities response to major events reflect the underlying culture? We
+      hypothesize that, although members of the Dark Internet are anonymous,
+      these events will bring the community together and give a representation of
+      the Dark Internet's culture that is different from the day to day. It is
+      useful for the world to understand the culture of the Dark Internet as it
+      expands its reach and is used by more and more people.
+   - What exactly is your plan? That is, what are the steps of your
+   experiment, what will you collect, how will you keep it safe, and so on.
+      - Our plan is twofold. We plan to collect texts form sources such as
+      blogs, Reddit, and news websites that all discuss the Dark Internet so we
+      can analyze their view of the Dark Internet. We then plan to take this
+      analysis and compare it to some events that have occurred involving the
+      Dark net to see if their view or user reactions change during those times
+      of crisis. All texts being used are public information available to anyone
+      with access to the Internet. Each text is coded so that we only use the
+      coded values in our analysis of those texts. We also plan to purchase items
+      from both Dark net and traditional Internet marketplaces and compare the
+      experiences involved with both and the quality of the products received in
+      relation to the price of the product.
+   - What attacks or risks might be introduced or assisted because of your
+   actions or your data sets, and how well do you resolve each of them? Use
+   the "safety guidelines" above to help in the brainstorming and analysis.
+   - Our data sets will be limited to the coding of the articles that we
+      read that have been published for public view on the Internet and Dark
+      Internet as well as the products that we receive from the purchasing we are
+      going through. Due to the nature of our project and the fact that we are
+      only looking to compare the views and products of the marketplaces on the
+      Dark and traditional Internet, there will be no attacks or risks to Tor due
+      to our actions and data sets.
+   - Walk us through why the benefits from item 1 outweigh the remaining
+   risks from item 3: why is this plan worthwhile despite the remaining risks
+   - Since we believe there are no risks associated with the conduction of
+      this study, the benefits of learning about the differences in the way Dark
+      and traditional Internet marketplaces behave and are viewed can only
+      provide valuable insight into their cultures.
+
+Please let me know if you have any questions or need further information on
+the above information. We tried to keep it short but also descriptive
+enough that you would understand what we were trying to do without bogging
+you down with the exact things we are coding in our textual analysis.
+
+Additionally, my team will need to present our thesis next semester to a
+panel of experts, and we were wondering if you would be interested in
+serving as a member of the panel.
+
+Thank you for all of your help with our team!
+
+-Kym
+
