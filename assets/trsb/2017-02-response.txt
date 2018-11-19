@@ -1,0 +1,192 @@
+Date: Tue, 20 Jun 2017 04:12:52 -0400
+From: Roger Dingledine <arma@mit.edu>
+Subject: Re: Privacy-Preserving Longevity Study of Hidden Services
+
+--- My first thoughts ---
+
+Initial thoughts on angles to consider:
+
+A) The traditional question for this group: Is their methodology safe
+enough? Do they provide enough detail and specificity for us to decide
+whether it's safe?
+
+B) Assuming yes, do we have faith that they can build and implement
+and deploy the thing they describe?
+
+This piece is interesting, because the bad-relays team already identified
+and kicked out their relays from the network, since they looked like
+an unidentified Sybil attack (and then Donncha contacted them, since
+some of the relays were from neu, and then a few days later they sent
+us this pdf).
+
+I think ultimately they should get the bad-relays team to be comfortable
+with the plan (else the bad-relays team will quite reasonably wonder
+what the next Sybil attack is for, and try to disrupt it). And I think
+we here can play a big role in either reassuring the bad-relays team or
+not doing that.
+
+C) What other steps should they take when deploying their experimental
+relays, like labelling their relay nicknames, setting contactinfo,
+setting myfamily, etc? Maybe there's a set of best practices we can
+invent and then recommend.
+
+We might also choose to recommend that they go public about the
+experiment, before they do it -- unless they have a compelling need for
+secrecy, e.g. because it would mess up the experiment, and I don't see
+one here?
+
+D) Do we think their mechanism is measuring things correctly, and
+measuring the right things?
+
+That is, if they collect things and compute them as they describe,
+will they indeed get the results they think they'll get? Part A is
+"is it safe to do", and part D is "will it actually work".
+
+E) Is it worthwhile, that is, how valuable are the outcomes they're
+aiming for?
+
+That is, what do we think about the risk (A) vs the accuracy (D) vs the
+benefit (E)?
+
+E) They seem to have some weird assumptions in their hypothesis,
+e.g. "Short-lived hidden services could indicate not to be legitimate
+domains, as compared to long-lived domains." Many short-lived services
+could be things other websites, such as onionshare addresses. The HSDirs
+can't distinguish what protocol the onion service speaks. These sorts
+of issues aren't killers, but it would be polite of us to point them
+out while we're noticing them.
+
+F) What do I leave out?
+
+And finally, I'll note that this submission has a lot of overlap with
+what I would expect to see in a hypothetical future Privcount submission,
+so here we are with a chance to set the precedent well. :)
+
+--- Anonymous reviewer 2 ---
+
+Motivation
+- Why would short-lived hidden services denote illegitimate domains? Onion
+share and Ricochet are legitimate applications that likely have
+short-lived hidden services.
+- How would an unusual lifetime identify a hidden service?
+
+Data Collection
+- The protocol isn't active secure. For example, consider a malicious
+HSDir or client that "marks" each hash-table entry by adding in some
+value that is a unique multiple of a base value larger than the largest
+expected count. Other well-known active attacks can be used as well.
+- Malicious inputs can arbitrarily increase the counts.
+- How many parties are controlling the HSDirs? Three?
+- Are the HSDirs running as normal? Will they run only for the lifetime
+of the study or are they more stable? How many HSDirs will be controlled
+by any one entity?
+- Can the output be made noisy? The data has the flavor of "anonymized"
+data, which can frequently be deanonymized by an adversary with auxiliary
+information.
+- For how long will measurement occur before aggregation?
+- Who is in control of the measurement study? Can that entity set
+the measurement interval arbitrarily short (thus eliminating any
+aggregation over time) or otherwise change the measurement parameters
+to defeat privacy protections (e.g. by modifying the key/identities of
+the participants)?
+- Will the protocol implementation be made publicly available? Will it
+receive any scrutiny outside of the implementor(s)?
+
+Overall, the risk seems minimal against the most likely threats (passive
+observation, post-hoc compulsion). Reasonable steps are taken to secure
+individual and intermediate data, and the output should be aggregated to
+a fairly high degree. However, I do worry that this is a bit of security
+theater, as it doesn't seem unlikely that the measurement will suffer
+from easily exploitable weaknesses that eliminate its purported security
+properties, such as
+  1. Control of crucial measurement parameters by a single entity
+  2. Active attacks that can be easily run by any single party, *including
+  malicious clients*
+  3. Common implementation oversights/shortcuts (e.g. not using/verifying
+  long-term public keys, use of an insecure broadcast protocol, using
+  a language such as Python that doesn't support secure deletion of keys)
+
+I do also worry about the validity of claims that can be made from
+this measurement study. How big is the hash table? If there are lots
+of collisions, then the apparent lifetimes will actually be the sum of
+lifetimes of many colliding services. You should be able to bound the
+chance that this case occurs or detect when it does. Also, it seems as if
+the protocol couldn't tell the difference between an onion service that
+frequently publishes its descriptor (e.g. due to frequently-changing
+Introduction Points) and one that is around for a long time. Those are
+very different cases.
+
+--- Anonymous Reviewer 3 ---
+
+Recommendations:
+
+Correctly marking relays as family, adding contact info, a public page
+describing the study and research protocol and linking it in the contact
+info for the relays.
+
+Question of sniffing onions for discovery versus using other discovery
+methods. This is a question of how much is gained by measuring "private
+onion sites" versus only measuring "public onion sites"? Limiting to
+public onions without sniffing can be done as in prior work:
+http://s3.eurecom.fr/docs/www17_darktracing.pdf
+
+--- My meta-review putting the above together ---
+
+I think the discussion comes down to three points for analysis:
+
+(A) Is your plan more dangerous than you think? That is, did we find
+new risks in the proposed protocol / methodology?
+
+Reviewer 2 identified some issues where a malicious component of your
+system, e.g. one of the relays, or any client, could influence the
+resulting data. They also suggested adding noise into the aggregated
+output. These sound like good points, either for modifying the protocol
+before you do the experiment, or at least for acknowledging in the
+paper. Having good answers to Reviewer 2's methodology clarifying
+questions seems smart, especially for item (C) below.
+
+Overall, the consensus is that it's pretty low risk: the safety board
+people are ok with the research, especially once you've thought through
+the analysis from Reviewer 2.
+
+(B) Are you on track to being able to answer your research questions,
+if you do the proposed experiments?
+
+This one is trickier. I think there are real concerns about whether you
+would be able to answer your research questions as currently posed --
+short lived onion services could be Onionshare users, Ricochet users,
+or something else. It's a poor assumption that they're all websites,
+and it gets especially poor when you're grabbing them at the HSDirs
+because nobody knows even what fraction of onion services are websites
+or Ricochet or whatever.
+
+I think you should rethink whether you'll be able to answer your research
+questions this way, because I suspect you won't. That said, ultimately
+this is a safety board, so technically our perspectives on this part
+are out of scope and you don't need to care about them. :)
+
+(C) What are our recommendations for how to best deploy these relays in
+the real Tor network while keeping the network operators happy?
+
+I think Reviewer 3's recommendations here are a great start: set your
+MyFamily lines correctly -- one family for all three research groups
+-- and set each ContactInfo accurately too, and include a url in the
+ContactInfo to a page that describes who you are, what you're doing,
+why it's useful, and why your methodology is as safe as you can make it.
+
+The reason it's not workable to convince only the directory authority
+operators in private is that there's a community of people on the
+tor-relays list who are hunting for Sybils and other anomalies, and
+there's a good chance they will find your relay family after a while,
+and I expect the directory authority operators won't want to be in
+the position then of saying "yes, we know about this, but don't worry,
+you don't need to know."
+
+All of this said, assuming you want to proceed, I will volunteer to be
+the mediator to explain to the other directory authority operators why
+your plan seems to be a safe enough plan. I can't speak for all of them
+or predict what they'll want to learn, but I'm optimistic we'd be able
+to find some way forward.
+
+--Roger
+

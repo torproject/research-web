@@ -1,0 +1,113 @@
+
+From: QI ZHONG <zhongqi92@berkeley.edu>
+Date: Mon, 10 Oct 2016 02:34:11 -0700
+
+A draft template/questionaire to promote safer Tor experiments
+
+1a. What are you trying to learn about? Is it:
+- New algorithm(s) that enhances current algorithm(s) in Tor.
+- New system that interacts with Tor.
+- New attack(s) that degrade(s) Tor properties.
+- The characteristics of the real-world Tor network and its clients, operators, network topology, etc.
+- Something else.
+
+The characteristics of the real-world Tor network and its clients, operators, network topology, etc.
+
+1b. What about the above are you trying to learn? Is it:
+- Performance enhancement/reduction.
+- Security enhancement/reduction.
+- Privacy enhancement/reduction.
+- Actual real-world trends, details, etc of the Tor network.
+-- Could we use this data to construct models about the Tor network?
+- Something else.
+
+Actual real-world trends, details, etc of the Tor network. It might be possible to construct better model.
+
+1c. Why is it important to learn the above?
+- It justifies the new algorithm/system/attack.
+- It would reveal (alarming) significant information about the Tor network, and:
+-- Tor should change its design (and we have suggestions on how).
+-- We can model this aspect of the Tor network and use it henceforth (and avoid collecting data like this again).
+- Something else.
+
+Something else. We hope it can make Tor more censorship-resistant.
+
+2. Could you learn this by doing a closed-form analysis from the design?
+- Yes, and it would be pretty close to reality.
+- Yes, but it would not be realistic.
+-- Can you estimate how significant a deviation you expect from the closed-form analysis compared to the real-world results? Is it more like a) anyone's guess, or b) bounded by some amount/factor.
+- No, due to difficulties in performing closed-form analysis from the design.
+- No, because it would not be the real-world behavior of the network. 
+
+No, because it would not be the real-world behavior of the network. 
+
+3a. What data points do you need to learn the above?
+- How many?
+We will be testing the reachability of the default bridges.
+- Over what time period and duration?
+Indefinite.
+- From which vanatage points on the network? (e.g. clients, relays, directory servers, network, ISP, HSdir, etc).
+We test it from off the network.
+- What granularity is the data that is collected.
+It is only the reachability of different bridges during different time.
+- How will they be kept ``safe'' while they are collected and stored?
+We don't have any secret data. All our results will be published after our research.
+-- Describe what you mean by ``safe'' here.
+
+3b. How do these data points tell you about the thing you want to learn about?
+- Would it be conclusive?
+No, but it would give us better insights.
+- Would it be valid for only a snap-shot-in time?
+Yes.
+- Would it have to be updated regularly to remain relevant?
+Yes.
+
+3c. Does the data need to be released to justify your experiments/system?
+- Yes.
+-- With what granularity would it be reported?
+-- Would it be obfuscated in some fashion?
+- No.
+-- How will you justify your results instead?
+Yes. We will obfuscate our probe locations. None of the other data is secret.
+
+4. Is there an alternative, and existing, source of data you could use instead of collecting your own?
+- Yes.
+- No, it
+-- doesn't exist.
+-- is too old.
+-- is not released by the collector.
+No, it doesn't exist. We can use Tor collector data as supplyment though.
+
+5. Could you evaluate your enhancement/attack on a (local) test Tor network?
+- Yes.
+- Yes, but limited by the models we could use.
+- No, since the models we have are insufficient, or don't exist, or not robust enough. We need:
+-- Realistic client behviour.
+-- Realistic networking behaviour.
+-- Realistic bandwidth and computation load.
+-- Realistic system/Tor interaction.
+- No, for another reason.
+No. We need a realistic adversary.
+
+6. Describe your experimental methodology for running experiments to learn about/attack the live Tor-network.
+6a. When running your experiment on the live-network, you will collect and/or process:
+- Only data generated and realted to our own clients and nodes.
+- The above as well as those of other users of the Tor network.
+- Only data of other users of the Tor network.
+Only data generated and realted to our own clients and nodes.
+
+6b. Will you introduce resources (relays and bandwidth) into the network.
+- Yes.
+-- We will run clients (honest but curious, and/or malicious).
+-- We will run Directories (honest but curious, and/or malicious).
+-- We will run relays (guard, middle, exit) (honest but curious, and/or malicious).
+- No.
+-- How will you observe/influence the network if not directly through Tor nodes?
+We will run clients (honest but curious, and/or malicious).
+
+6c. Will you run custom Tor code on your Tor nodes?
+- Yes, but only to log certain events.
+- Yes, but it changes the original behavior.
+-- How would this affect the Tor network in general? Is it part of an attack? Describe the impact.
+No.
+

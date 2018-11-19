@@ -1,0 +1,64 @@
+title: Research Groups
+---
+body:
+
+Interested to find other anonymity researchers? Here are some researchers and
+research groups you should take a look at.
+
+### <a href="http://sec.cs.ucl.ac.uk/home/">Information Security Research Group</a>, <a href="http://www.cs.ucl.ac.uk/home/">University College London</a>
+
+<dl>
+<dt>Location</dt><dd>London, United Kingdom</dd>
+<dt>Key People</dt><dd>Emiliano De Cristofaro, 
+<a href="http://sec.cs.ucl.ac.uk/users/smurdoch/">Steven Murdoch</a>, 
+<a href="http://www0.cs.ucl.ac.uk/staff/G.Danezis/">George Danezis</a></dd>
+</dl>
+
+The group comprised expertise across all filed of security, cryptography and
+privacy, including the study of anonymous communications, traffic analysis,
+censorship resistance, measurement studies, and privacy related cryptography.
+In related areas the group studies human factors and usability of privacy systems,
+genetic privacy, infrastructure privacy and abuse in online communities and
+media.
+
+Additional links:
+
+* [Publications](http://sec.cs.ucl.ac.uk/publications/)
+
+### <a href="https://www-users.cs.umn.edu/~hoppernj/research.html">Nick Hopper</a>, <a href="https://www.umn.edu/">University of Minnesota</a>
+
+<dl>
+<dt>Location</dt><dd>Minneapolis, MN, USA</dd>
+<dt>Key People</dt><dd>Nick Hopper, <a href="https://www-users.cs.umn.edu/~hoppernj/advising.html">Current Students</a></dd>
+
+The group has worked on several projects seeking methods to improve
+Tor's performance and to understand the degradation of anonymity
+resulting from these methods. This includes understanding attacks on
+and improvements to many mechanisms used by Tor to improve
+performance, including load balancing, admission control, congestion
+control, hidden services, circuit selection, and circuit scheduling.
+We have also worked on accurately measuring and modeling the Tor
+network. Our group developed shadow, a network emulator that allows
+accurate large-scale simulations of Tor's performance and security,
+and developed algorithms for producing accurate reduced-scale models
+of the network. We have recently worked to develop methods for
+privately measuring improved models of Tor network traffic. Finally,
+the group has recently worked on understanding the limitations of website
+fingerprinting attacks and possible mitigation strategies.
+
+Additional links:
+
+* [Publications](https://www-users.cs.umn.edu/~hoppernj/publications.html)
+
+## Other Groups
+
+*   Ian Goldberg's [CrySP](http://crysp.uwaterloo.ca/) group at Waterloo.
+*   [Nikita Borisov](http://www.hatswitch.org/~nikita/)'s group at Illinois.
+*   Micah Sherr's [SecLab](https://security.cs.georgetown.edu/) group at
+    Georgetown.
+*   Matt Wright's [iSec](http://isec.uta.edu/) group at UTA.
+
+## Add your group
+
+If your research group, in industry or academia, is involved in research on Tor
+then please send a mail to ZZZZ with the details you would like to have added.

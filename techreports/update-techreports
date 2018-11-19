@@ -1,0 +1,6 @@
+#!/bin/sh
+
+bibtex2html -d -r -nodoc -nokeys -q techreports.bib
+
+cat techreports-header.lr techreports.html > ../content/techreports/contents.lr
+mv techreports_bib.html ../assets/techreports/

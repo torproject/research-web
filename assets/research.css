@@ -1,0 +1,21 @@
+
+.research-navbar {
+  border-bottom: 1px solid rgb(125, 70, 152);
+}
+
+.research-navbar-nav {
+  border-left: 1px dotted rgb(125, 70, 152);
+}
+
+.research-nav-item {
+  border-right: 1px dotted rgb(125, 70, 152);
+}
+
+.research-nav-item:hover {
+  border-bottom: 2px solid rgb(125, 70, 152);
+}
+
+.research-nav-item-active {
+  font-weight: bold;
+  border-bottom: 2px solid rgb(125, 70, 152);
+}

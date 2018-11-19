@@ -1,0 +1,118 @@
+Date: Sun, 16 Jul 2017 01:00:40 -0400
+From: Roger Dingledine <arma@mit.edu>
+Subject: Re: [tor-research-safety] Request for feedback on measuring popularity of Facebook onion site front page
+
+Here are some thoughts that are hopefully useful. I encourage other safety
+board people to jump in if they have responses or other perspectives.
+
+A) Here's an attack that your published data could enable.
+
+Let's say there is another page somewhere in onion land that looks
+just like the Facebook frontpage, from your classifier's perspective.
+
+In that case you're going to be counting, and publishing, what you think
+are Facebook frontpage visits, but if somebody knows the ground truth
+for the Facebook visits (and at least Facebook does), then they can
+subtract out the ground truth and learn the popularity of that other page.
+
+Counterintuitively, the more "colliding" pages there are, or rather,
+the more colliding pages there are that are sufficiently popular, the
+less scary things get, since you're publishing popularity of "Facebook +
+all the others that look like Facebook", and if that second part of the
+number is a broad variety of pages, it's not so scary to publish it.
+
+I guess you can look through your training traces to see if there are
+traces that look very similar, to get a handle on whether there are zero
+or some or many. But even if you find zero, (1) are your training traces
+just the front pages of other onion sites? In that case you'll be missing
+many internal pages, and maybe there is a colliding internal page. And
+(2) you don't have a comprehensive onion list (whatever that even means),
+so you can't assess closeness for the pages you don't know about. And
+(3) remember dynamic pages -- like a duckduckgo search for a particular
+sensitive word that you didn't think to search for. (I don't think that
+particular example will produce a collision with the Facebook frontpage,
+but maybe there's some similar example that would.)
+
+So, principle 1: publishing a sum of popularity of a small number of
+sites is inherently more revealing than publishing the sum of popularity
+of a broader set of sites, because the small number is more precise.
+
+And principle 1b: if an external party has a popularity count for a subset
+of your sum, they can get more precision than you originally intended.
+
+Unless the differential privacy that you talked about handles this case?
+I have been assuming it focuses on making it hard to reconstruct exactly
+how many hits a given relay saw, but maybe it does more magic than that?
+
+B) You mention picking Facebook in particular, and I assume you'll be
+naming them in your paper. Have you asked them if they're ok with this?
+
+Getting consent when possible would go a long way to making your approach
+as safe as it can be. I can imagine that Facebook would say it's ok,
+while I could imagine that a particular SecureDrop deployment might ask
+you to please not do it.
+
+In particular, two good contacts for Facebook would be Alec Muffett
+and <other Facebook security person anonymized for publication>.
+
+The service side is of course only half of the equation: in an ideal
+world it would be best to get consent from all the clients too. But since
+your experiment's approach aggregates all the clients, yet singles out
+the service, I think it's much more important to think about consent
+from the service side for this case.
+
+So, principle 2: the more you're going to single out and then name a
+particular entity, the more important it is for you to get consent from
+that entity before doing so.
+
+C) In fact, it would probably be good in your paper to specify *why*
+the safety board thought that doing this measurement was ok -- that
+you got consent and that's why you were comfortable naming them and
+publishing a measurement just for them.
+
+I think mentioning it in the paper is important because if this general
+"popularity measurement" attack works, I can totally imagine somebody
+wanting to do a follow-on paper measuring individual popularity for a big
+pile of other onion services, first because it would seem cool to do it
+in bulk (the exact opposite of the reason why you decided not to do it in
+bulk), and second because eventually people will realize that measuring
+popularity is a key stepping stone to building a bayesian prior, which
+could make website fingerprinting attacks work better than the default
+"assume a uniform prior" that I guess a lot of them do now.
+
+So, principle 3: explicitly say in your paper where your
+lines-you-didn't-want-to-cross are, so readers can know which follow-on
+activities are things you wouldn't have wanted to do (and so future PCs
+reviewing future follow-on papers have something concrete to point to
+when they're expressing concern about methodology).
+
+D) I actually expect your Facebook popularity measurement to show
+that it's not very popular right now. That's because, at least last I
+checked, all of the automated apps and stuff use facebook.com as their
+destination. The Facebook folks have talked about putting the onion
+address by default in their various mobile apps if it detects that Orbot
+is running, but as far as I know they haven't rolled that out yet. So
+(1) doing a measurement now will allow you to do another measurement
+later once Facebook has made some changes, and you'll have a baseline for
+comparison; and (2) if you coordinate better with the Facebook people,
+you can learn the state and expected timing for their "onion address by
+default" roll-out -- or heck, you might learn other confounding factors
+that Facebook can explain for you.
+
+E) If you're planning to use PrivCount, does that mean you are running
+more than one relay to do this measurement? I think yes because "and
+more than 10 data collectors"?
+
+For the last person who asked us about running many relays for doing
+measurements, we suggested that they label their relays in the ContactInfo
+section, and put up a little page explaining what their research is and
+why it's useful (I think the text you sent us would do fine).
+
+Here is their page for an example: http://tor.ccs.neu.edu/
+
+I think that step would be wise here too.
+
+Hope those are helpful! Let me know if you have any questions.
+
+--Roger
+

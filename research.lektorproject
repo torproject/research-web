@@ -1,0 +1,16 @@
+[project]
+name = Tor Research Portal
+url = https://research-staging.torproject.org/
+url_style = absolute
+locale = en
+
+[alternatives.en]
+name = English
+primary = yes
+url_prefix = /
+locale = en
+
+[alternatives.ro]
+name = Română
+url_prefix = /ro/
+locale = ro

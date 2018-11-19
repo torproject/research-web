@@ -76,3 +76,5 @@ company-statistics-cache.el
 
 # anaconda-mode
 anaconda-mode/
+
+i18n/_compiled

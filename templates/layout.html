@@ -1,22 +1,37 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ '/research.css'|asseturl }}">
 <link rel="stylesheet" href="{{ '/static/bootstrap.css'|asseturl }}">
 <link rel="stylesheet" href="{{ '/static/fonts/open-iconic/font/css/open-iconic-bootstrap.css'|asseturl }}">
 
-<title>{% block title %}{{ this.title }}{% endblock %} | {{ _("Tor Project | Tor Browser Manual") }}</title>
+<title>{% block title %}{{ this.title }}{% endblock %} | {{ _("Tor Project | Tor Research Portal") }}</title>
 <body class="no-gutters" data-spy="scroll" data-target="#sidenav-topics" id="topics" data-children=".item">
   <header>
     {% include 'navbar.html' %}
   </header>
   <div class="page">
-    <div class="container-fluid">
-      <div class="row flex-xl-nowrap">
-	{% include 'sidenav.html' %}
-        <main role="main" class="col-sm-12 col-xs-12  ml-sm-auto col-md-9 col-lg-9 {{ bag('alternatives', this.alt, 'order') }}">
-          {% block body %}{% endblock %}
-        </main>
+    <div class="jumbotron jumbotron-fluid bg-primary text-white mb-0">
+      <div class="container-fluid text-center">
+        <h1 class="display-4 no-border font-weight-light pt-0 pb-0">{{ _("Tor Research") }}</h2>
       </div>
+    </div>
+
+    <nav class="navbar no-background navbar-expand-lg border-primary mt-0 mb-md-5 py-0 research-navbar">
+      <ul class="navbar-nav research-navbar-nav border-primary mb-0 mx-auto p-0">
+        {% set topicbag = 'topics+' + this.alt %}
+        {% for id, item in bag(topicbag).items() %}
+        <li class="border-primary nav-item research-nav-item {% if (item.path != "" and this.is_child_of(item.path)) or (item.path == "" and this.path == "/") %} research-nav-item-active{% endif %}">
+          <a class="nav-link" href="{% if this.alt != "en"%}/{{ this.alt }}{% endif%}/{{ item.path }}">{{ _(item.label) }} </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="container">
+      <main role="main" class="{{ bag('alternatives', this.alt, 'order') }}">
+        {% block body %}{% endblock %}
+      </main>
     </div>
   </div>
   <footer>
