@@ -1,0 +1,124 @@
+From: Rob Jansen <rob.g.jansen@nrl.navy.mil>
+Subject: Request for feedback on measuring popularity of Facebook onion site front page
+Date: Sun, 2 Jul 2017
+
+# Overview
+
+We have been working on exploring the website fingerprinting problem in
+Tor. In website fingerprinting, either a client's guard or someone that
+can observe the link between the client and its guard is adversarial and
+attempts to link the client to its destination. This linking is attempted
+by first crawling common destinations and gathering a dataset of webpage
+features, and then training a classifier to recognize those features,
+and finally using the trained classifier to guess the destination to
+which an observed traffic stream connected.
+
+A common assumption in research papers that explore these attacks is
+that the adversary controls the guard or client-to-guard link. We are
+attempting to understand how effective fingerprinting would be for a
+weaker node adversary that runs only middle nodes, and who focuses on
+onion service websites. This involves 1.) guessing if an observed circuit
+is a hidden service circuit (already done by Kwon et al. from a guard node
+position); 2.) guessing that you are in a middle position, specifically
+the middle position next to the client-side guard; and 3.) if both 1 and
+2 are true, then guessing the onion service website based on a trained
+classifier. We would like to apply these classifiers to Tor traffic and
+use them to measure the popularity of the Facebook onion site front page.
+
+# Where we are
+
+We have already used our own client and middle to crawl the onion
+service space. Our client built circuits to a list of onions, and our
+client pinned middle relays under our control so that all circuits were
+built through our middles. The clients sent a special signal to our
+middles so that the middles could tag the circuits that were created by
+us (so that it only logged our circuits and not circuits of legitimate
+clients). Our middles then logged ground truth information about these
+circuits, as well as features that could be used for guessing the circuit
+type, position, and onion site being accessed. We used this data set to
+train classifiers and run analysis.
+
+# Where we want to go
+
+In our version of website fingerprinting, we guess the circuit type,
+position, and onion site. Since we are doing this from a middle node,
+even if all of those guesses work out, the adversary learns that someone
+with a specific guard went to a given onion site. This is not enough for
+deanonymization. Although there are several strategies that could leak
+information about the client once a middle is successful at fingerprinting
+(guard profiling, latency attacks to geolocate clients, legal attacks
+on guards), we would like to show a potentially interesting application
+of website fingerprinting beyond client deanonymization.
+
+If fingerprinting at the middle is successful, then it can be used to
+discover onion service popularity; we first identify the onion site, and
+then measure the frequency that each onion site is accessed. Because this
+measurement is done from the middle position, we will more quickly gain
+a representative sample of all circuits built in Tor (because new middles
+are chosen for each circuit with fewer biases than guards and exits). We
+would like to use PrivCount to do such a popularity measurement safely,
+following the methods and settings set out in the "Safely Measuring Tor"
+CCS paper by Jansen and Johnson. This is where we are requesting feedback.
+
+We would like to measure the following:
+1. The fraction of all circuits that we classify as hidden service circuits
+2. The fraction of hidden service circuits that we classify as accessing
+the Facebook onion front page
+
+We want to do this measurement safely, because it will involve measuring
+circuits of real users. We hope to be able to do this from the first
+client-side middle node (which will involve guessing the circuit,
+position, and the site) as well as from the rendezvous position (which
+will only involve guessing the site). The classifiers necessary to perform
+these guesses will be trained on our previously crawled onion data set
+and a dataset of circuit information that we generated synthetically
+in Shadow.
+
+During the measurement process, circuit and cell metadata will be used
+by the classifiers to make their guesses. Circuit meta-data includes
+a description of the previous and next relay in the circuit, as well
+as the previous and next circuit ID and channel ID. Cell metadata
+includes whether the cell was sent or received and from which side of
+the circuit, the previous and next circuit ID and channel ID, the cell
+type and cell command type if known, and a timestamp relative to the
+start of the circuit.
+
+The meta-data will be sent in real time to PrivCount where it will be
+stored in volatile memory (RAM); the longest time that PrivCount will
+store the data in RAM is the lifetime of the circuit. When the circuit
+closes, PrivCount will pass the meta-data to the previously-trained
+classifier, which will make the guesses as appropriate. The following
+counters will be incremented in PrivCount according to the results of
+the guesses:
+
+1. Total number of circuits
+2. Total number of onion service circuits
+3. Number of onion service circuits accessing facebook onion frontpage
+4. Number of onion service circuits NOT accessing facebook onion frontpage
+
+Once these counters are incremented, all meta-data corresponding to
+circuit and its cells are destroyed. The PrivCount counters are initiated
+to noisy values to ensure differential privacy is maintained (cf. "Safely
+Measuring Tor"), and are then blinded and distributed across several
+share keepers to provide secure aggregation. At the end of the process,
+we learn *only* the value of these noisy counts aggregated across all data
+collectors, and nothing else about the information that was used during
+the measurement process. Specifically, client usage of Tor during our
+measurement will be protected under differential privacy. (We currently
+plan to run at least 3 share keepers and more than 10 data collectors.)
+
+# Value
+
+This work has value to the community that we believe offsets the potential
+risks associated with the measurement. Understanding Facebook popularity
+and having raw numbers to report, while is in itself interesting, also
+allows us to focus a popularity measurement on the positive use cases
+of Tor and onion service rather than the not-so-positive. We believe
+that showing how website fingerprinting can be applied to purposes
+other than client deanonymization is novel and interesting and may
+spur additional research that may ultimately help us better understand
+the real world risks associated with fingerprinting techniques (which
+may lead to better fingerprinting defenses). Finally, risk from middle
+nodes is often overlooked, and we think there is value in showing what
+is possible from the position with the fewest requirements.
+

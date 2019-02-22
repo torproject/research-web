@@ -1,0 +1,3 @@
+[submodule "themes/torproject"]
+	path = themes/torproject
+	url = https://github.com/irl/torproject-hugo.git

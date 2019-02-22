@@ -1,0 +1,15 @@
+Date: Thu, 11 May 2017 03:18:19 -0400 (EDT)
+From: Guevara Noubir <noubir@ccs.neu.edu>
+Subject: Privacy-Preserving Longevity Study of Hidden Services
+
+Dear Tor Safety Board members,
+
+We have a collaboration between three teams, Erik Blass (Airbus),
+Aziz Mohaisen (University of Buffalo), Guevara Noubir (Northeastern
+University), and have been working on the design of a privacy-preserving
+study of the lifespan of hidden services. Please find attached our
+proposed design. We look forward to your feedback.
+
+Best regards,
+Guevara
+

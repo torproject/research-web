@@ -1,0 +1,5 @@
+#!/bin/sh
+bibtex2html -d -r -nodoc -nokeys -q techreports.bib
+cat techreports-header.html techreports.html techreports-footer.html > content/techreports.html
+mv techreports_bib.html static/
+sed -i 's/techreports_bib/..\/techreports_bib/' content/techreports.html

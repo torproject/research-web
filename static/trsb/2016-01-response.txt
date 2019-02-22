@@ -1,0 +1,42 @@
+
+Date: Fri, 16 Dec 2016 16:54:52 +0100
+From: "M. Tariq Elahi" <Tariq.Elahi@esat.kuleuven.be>
+Subject: Re: Tor Research Safety Board: default bridge reachability
+
+Yesterday, I wrote to David et al. with a short summary of our review.
+The tl;dr was that we (Damon McCoy and I) don't see anything
+particularly wrong with their experimental setup and their proposed
+research. Here is a less terse version of the review.
+
+Summary of request:
+
+The goal of the experiments is to gain more extensive empirical data
+about how censors block Tor bridges. The experiments will measure where
+in the world bridges are blocked, how many are blocked, how long before
+they are blocked and other similar statistics and data points. The
+overarching goal is to use this new found information to aid in better
+bridge distribution schemes and censorship resistance in general.
+
+Experimental setup:
+
+Mainly the setup is to try to access bridges from many points on the
+Internet (through VPS hosting providers) and record if they were
+successfully connected to. There doesn't seem to be anything
+particularly risky here. For bridges that do get burned because of these
+probes we suggested that perhaps replacing them might be fair.
+
+Risks:
+
+The risk to users or the testing nodes do not seem high. The expected to
+be released data does not contain identifying information. The risk to
+public bridges is that they get blocked. However, as noted in the
+request as well, bridges that are public are not particularly well
+defended. However, this state of affairs seems to be OK in situations
+where the censor is not actively trying to find bridges to block.
+
+
+Recommendation:
+
+We believe that these experiments do not significantly increase the
+threat level of the Tor network, its operators, or its clients.
+

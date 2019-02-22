@@ -1,0 +1,201 @@
+Date: Thu, 22 Dec 2016 01:07:53 -0500
+From: Paul Syverson <paul.syverson@nrl.navy.mil>
+Subject: Re: Tor Research Safety Board
+
+Hi Kymberlee,
+
+Here is the TRSB response to your proposal.
+Please share with your team.
+
+May the season make sense to you and yours,
+Paul
+
+----------------------------------------
+
+Dear UMD Gemstone Team DIRE,
+
+Thank you for your submission of proposed research to the Tor Research
+Safety Board. Your proposal was reviewed by three members of the
+Board. I have assembled this response from the reviews each has
+given. There was no significant discussion since reviews were largely
+in agreement.
+
+Aside from safety considerations, all reviewers noted that they found
+the research to be potentially quite interesting. That is not always
+so, even for seasoned researchers much less undergraduates.  Thus
+congratulations already in that respect.
+
+All reviewers agreed that there are no Tor-specific safety concerns
+for your research project. Nonetheless, all noted similar concerns
+for such research on the Internet, whether concerning Tor or not.
+
+Details can be found in the comments of each reviewer, included below.
+But in summary the concerns are
+
+1. Make sure that you take adequate security precautions for yourselves
+not just those you research.
+
+2. Be aware that when coding input from multiple sources, potential
+exists for privacy or safety risks to emerge out of the synthesis,
+even if the individual items being coded are safe in isolation.
+
+3. What constitutes "public" information may not be black-and-white and
+can have lots of context to it.
+
+Any or all of these may require the input or analysis of your IRB. In
+any case you should look over our comments and make sure that you are
+both taking them into consideration yourselves and making appropriate
+decisions with respect to your IRB.
+
+Please let me know if you have any further questions or comments.
+I look forward to seeing how your work progresses.
+
+Sincerely,
+Paul Syverson
+
+---------------------------------------------------------------
+Comments from Reviewer A
+---------------------------------------------------------------
+Based on the answers to the questionnaire, I would flag up the
+following issues that may be helpful to the research team:
+
+- The data collected is referred to as "public", and as I understand
+  it consists of discussion forum posts etc associated with specific
+  "darkweb" topics. While, the "public" nature of those posts does to
+  some extent mitigate the risks introduced by the research per se,
+  that data has the potential to be personally identifiable,
+  particularly when it is subject to coding on the basis of the
+  content. Thus I would advise the researchers to seek advice at their
+  institution on whether specific protocols and approvals are needed
+  when handling such PII. I know for a fact that institutions in the
+  EU -- where horizontal data protection provisions are in place --
+  would have to go through a (lightweight) approval process to collect
+  and handle such personal information. Probably procedures to ensure
+  the "anonymity" of the coded transcripts would also have to be
+  described as part of the approval process.
+
+- There is a little ambiguity in the description in relation to the
+  phrase "compare the views and products of the marketplaces". This
+  may mean simply browsing the pages of underground marketplaces,
+  which I think is fine (subject to the above). However, if products
+  are to be bought a certain amount of care should be taken. (1) the
+  safety of researchers should be thought of when it comes to payment
+  options, as well as shipping addresses -- ensuring that the
+  researchers personal information does not end up in the hands of
+  criminal organizations; (2) there are delicacies associated with
+  purchasing controlled substances, or other restricted items or
+  material from specific jurisdictions -- and probably some sound
+  legal advice will be needed in case this is the plan; (3) there are
+  ethical issues about providing payment for, or to anyone involved,
+  in criminal activity, since this may be seen as financially
+  supporting crime. Note that doing the above for research purposes
+  per se, is probably not a sufficient moral or legal defence, and
+  some sound legal & ethical reasoning may be required -- as well as
+  clear protocols to minimize risks to researchers or society at
+  large.
+
+- Besides the above, the research seems to be using Tor as a browser;
+  it does not involve any access that all other Tor users would not
+  have (eg. it does not involve observing traffic, running
+  infrastructure or even hidden services); and no other streams of
+  data, besides what is made available by hidden services, is likely
+  to be affected. Thus, I would think that the usual protocols for
+  collecting PII, and safely interacting with potentially criminal
+  activity while conducting research, should cover most concerns.
+
+- Beyond the strict remit of the board: this does sound like an
+  interesting project!
+
+---------------------------------------------------------------
+Comments from Reviewer B
+---------------------------------------------------------------
+[Note these are written in the context of Reviewer A's comments. -PFS]
+
+Interesting, I agree!
+
+I want to underscore two of Reviewer A's points:
+
+1) If you're giving money to bad people, you need to think through the
+ethics of that.
+
+2) It's important to consider your own safety when you're buying arbitrary
+things from arbitrary people on the Internet.
+
+Both of those are standard IRB topics, and not particularly Tor related,
+so we are right to send them to their IRB for more thoughts on those.
+
+And then here's a third one:
+
+3) Some marketplaces (both in onionspace and on the insecure web)
+require logins before you can browse the wares -- and some of them put
+up barriers to creating the account. At what point do the pages behind
+such login requirements stop counting as 'public'? "Anybody could have
+done these eighteen steps, so the stuff I found after that isn't private"
+is a slippery argument.
+
+But overall, sounds great, thumbs up!
+
+
+---------------------------------------------------------------
+Comments from Reviewer C
+---------------------------------------------------------------
+This looks like very interesting and potentially quite useful work.  I
+look forward to seeing its results.  I see no show-stoppers, but I do
+have a few safety recommendations and considerations.
+
+The proposed research is "limited to the coding of the articles that
+      we read that have been published for public view on the Internet
+      and Dark Internet as well as the products that we receive from
+      the purchasing we are going through."
+
+The researchers therefore conclude that there is no risk expected in
+conducting this work. Construed strictly in terms of expected Tor
+protocol use or gathering of Tor usage network data, that is
+true. However there are a few concerns.
+
+1. Safety of the researchers is as important as safety of those
+researched.  While obviously you can give yourselves informed consent,
+you should take the same precautions as when purchasing or downloading
+anything from the Internet, perhaps with a slight increase in caution
+if purchasing items or visiting forums that seem potentially to have
+higher than normal likelihood of malicious activity, e.g., if focused
+on sensitive or controversial issues or goods.  That will of course
+depend on the forums in which you participate.  To the extent
+practicable, you should at least protect your own identities and
+network location.  It would make sense to conduct all your research
+via Tor running on a suitably up-to-date and protected system except
+where something specific precludes that, e.g. visiting a forum/site
+that restricts access from the Tor network). Discussing the context of
+and extent to which such blockage is encountered could be a useful
+research output of this work.
+
+2. "[P]ublished for public view" is not as straightforward as that
+expression might seem.
+
+First of all, as Vitaly Shmatikov is fond of saying, there is no
+PII... it's all PII. Cf. his work w/ Arvind Narayanan on deanonymizing
+highly dimensional public data using, e.g., publicly posted IMDb
+reviews. Coding information from multiple sources potentially runs
+that risk, and the research should be conducted cognizant of the sorts
+of concerns that research in this space has identified.
+
+Second, you have not said whether sites you will visit/purchase-from
+require registration to participate. That is one indicator of privacy
+assumptions. But whether the sites require registration or not,
+certainly some forums assume information is to be shared only among
+participants or otherwise expect discretion and respect for privacy,
+e.g., forums for discussion amongst crime or disease abuse
+victims. Similarly, for participants in a purchase or other financial
+transaction.
+
+Third, even if information is publicly available, it may be that
+original sources of that information intended it to remain private in
+a way that is violated by public posting. Public posting may have
+occurred when others violated those assumptions. 
+
+None of these are Tor-specific safety considerations, but the
+researchers should be cautious and cognizant of these themselves and
+should make sure that their intended research is acceptable given the
+guidelines or evaluation of UMD's IRB or its other institutional bodies
+for research involving (even public) data about individuals.
+

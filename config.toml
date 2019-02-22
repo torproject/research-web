@@ -1,0 +1,40 @@
+baseURL = "https://research-staging.torproject.org/"
+languageCode = "en-us"
+title = "Research"
+theme = "torproject"
+
+[[menu.main]]
+  name = "Home"
+  title = "Research Portal Home Page"
+  url = "/"
+  weight = -200
+
+[[menu.main]]
+  name = "Safety Board"
+  title = "Tor Research Safety Board"
+  url = "/safetyboard"
+  weight = -190
+
+[[menu.main]]
+  name = "Research Groups"
+  title = "Tor-related Research Groups"
+  url = "/groups"
+  weight = -180
+
+[[menu.main]]
+  name = "Research Ideas"
+  title = "Research Ideas with Tor"
+  url = "/ideas"
+  weight = -170
+
+[[menu.main]]
+  name = "Tech Reports"
+  title = "Tor Project Technical Reports"
+  url = "/techreports"
+  weight = -160
+
+[[menu.main]]
+  name = "Mailing Lists"
+  title = "Tor Researchers Mailing List"
+  url = "/mailinglist"
+  weight = -150
