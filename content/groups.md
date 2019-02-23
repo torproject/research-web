@@ -11,6 +11,7 @@ research groups you should take a look at.
 * [Information Security Research Group, University College London](#ucl)
 * [Nick Hopper, University of Minnesota](#hopper)
 * [Cryptography, Security, and Privacy (CrySP) Research Group, University of Waterloo](#crysp)
+* [Center for Cybersecurity, Rochester Institute of Technology](#rit)
 * [Other groups](#other)
 * [Add your group](#add)
 
@@ -93,6 +94,18 @@ facility has 144 CPU cores and 12 TB of RAM.</p>
 <p><a class="btn btn-outline-primary mr-2" href="https://crysp.uwaterloo.ca/publications/">Publications</a></p>
 </div>
 
+<div class="card p-5 mb-3">
+<h3 id="rit" class="card-title"><a href="https://www.rit.edu/cybersecurity/">Center for Cybersecurity</a>, <a href="https://www.rit.edu/">Rochester Institute of Technology</a></h3>
+<dl>
+<dt>Location</dt><dd>Rochester, NY, USA</dd>
+<dt>Key People</dt><dd>Directed by <a href="https://sites.google.com/site/matthewkwright/">Matthew Wright</a></dd>
+</dl>
+<p>The group explores website fingerprinting attacks and defenses in Tor,
+primarily based on deep learning techniques.</p>
+<h4>Additional Links</h4>
+<p><a class="btn btn-outline-primary mr-2" href="https://github.com/deep-fingerprinting">GitHub</a></p>
+</div>
+
 <a id="other"></a>
 
 ## Other groups
@@ -100,7 +113,6 @@ facility has 144 CPU cores and 12 TB of RAM.</p>
 *   [Nikita Borisov](http://www.hatswitch.org/~nikita/)'s group at Illinois.
 *   Micah Sherr's [SecLab](https://security.cs.georgetown.edu/) group at
     Georgetown.
-*   Matt Wright's [iSec](http://isec.uta.edu/) group at UTA.
 
 <a id="add"></a>
 
