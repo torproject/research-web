@@ -2,7 +2,7 @@ server: content/techreports.html
 	hugo serve
 
 content/techreports.html: techreports-header.html techreports-footer.html techreports.bib
-	./generate-tech-reports
+	./generate-techreports-html
 
 staging: content/techreports.html
 	hugo -b https://research-staging.torproject.org/
