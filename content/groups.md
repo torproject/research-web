@@ -15,6 +15,9 @@ research groups you should take a look at.
 * [Other groups](#other)
 * [Add your group](#add)
 
+<div class="row">
+
+<div class="col-md-6 p-2">
 <div class="card p-5 mb-3">
 <h3 id="nrl" class="card-title"><a href="https://www.nrl.navy.mil/itd/chacs/5543">Traffic Security Group of the Formal Methods Section</a>, <a href="https://www.nrl.navy.mil/">U.S. Naval Research Laboratory</a></h3>
 <dl>
@@ -33,7 +36,9 @@ group.</p>
 <h4>Additional links</h4>
 <p><a class="btn btn-outline-primary mr-2" href="https://www.nrl.navy.mil/itd/chacs/publications">Publications</a></p>
 </div>
+</div>
 
+<div class="col-md-6 p-2">
 <div class="card p-5 mb-3">
 <h3 id="ucl" class="card-title"><a href="http://sec.cs.ucl.ac.uk/home/">Information Security Research Group</a>, <a href="http://www.cs.ucl.ac.uk/home/">University College London</a></h3>
 <dl>
@@ -51,7 +56,9 @@ media.</p>
 <h4>Additional links</h4>
 <p><a class="btn btn-outline-primary mr-2" href="http://sec.cs.ucl.ac.uk/publications/">Publications</a></p>
 </div>
+</div>
 
+<div class="col-md-6 p-2">
 <div class="card p-5 mb-3">
 <h3 id="hopper" class="card-title"><a href="https://www-users.cs.umn.edu/~hoppernj/research.html">Nick Hopper</a>, <a href="https://www.umn.edu/">University of Minnesota</a></h3>
 <dl>
@@ -74,7 +81,9 @@ fingerprinting attacks and possible mitigation strategies.</p>
 <h4>Additional links</h4>
 <p><a class="btn btn-outline-primary mr-2" href="https://www-users.cs.umn.edu/~hoppernj/publications.html">Publications</a></p>
 </div>
+</div>
 
+<div class="col-md-6 p-2">
 <div class="card p-5 mb-3">
 <h3 id="crysp" class="card-title"><a href="https://crysp.uwaterloo.ca/">Cryptography, Security, and Privacy (CrySP) Research Group</a>, <a href="https://uwaterloo.ca/">University of Waterloo</a></h3>
 <dl>
@@ -93,7 +102,9 @@ facility has 144 CPU cores and 12 TB of RAM.</p>
 <h4>Additional links</h4>
 <p><a class="btn btn-outline-primary mr-2" href="https://crysp.uwaterloo.ca/publications/">Publications</a></p>
 </div>
+</div>
 
+<div class="col-md-6 p-2">
 <div class="card p-5 mb-3">
 <h3 id="rit" class="card-title"><a href="https://www.rit.edu/cybersecurity/">Center for Cybersecurity</a>, <a href="https://www.rit.edu/">Rochester Institute of Technology</a></h3>
 <dl>
@@ -105,6 +116,9 @@ primarily based on deep learning techniques.</p>
 <h4>Additional Links</h4>
 <p><a class="btn btn-outline-primary mr-2" href="https://github.com/deep-fingerprinting">GitHub</a></p>
 </div>
+</div>
+
+</div><!-- .row -->
 
 <a id="other"></a>
 

@@ -106,33 +106,31 @@ We are publishing safety board cases in this section, to help you craft your own
 
 2016-01: Studying reachability of Tor Browser's default bridges
 
-*   [request](/trsb/2016-01-request.txt)
-*   [questionnaire](/trsb/2016-01-questionnaire.txt)
-*   [questionnaire answers](/trsb/2016-01-questionnaire-answers.txt)
-*   [response](/trsb/2016-01-response.txt)
+<a href="/trsb/2016-01-request.txt" class="badge badge-primary">Request</a>
+<a href="/trsb/2016-01-questionnaire.txt" class="badge badge-info">Questionnaire</a>
+<a href="/trsb/2016-01-questionnaire-answers.txt" class="badge badge-primary">Questionnaire Answers</a>
+<a href="/trsb/2016-01-response.txt" class="badge badge-success">Response</a>
 
 2016-02: [still anonymized during paper review]
 
 2016-03: Understanding "dark web" cultures and communities
 
-*   [request](/trsb/2016-03-request.txt)
-*   [response](/trsb/2016-03-response.txt)
+<a href="/trsb/2016-03-request.txt" class="badge badge-primary">Request</a>
+<a href="/trsb/2016-03-response.txt" class="badge badge-success">Response</a>
 
 2017-01: [still anonymized during paper review]
 
 2017-02: Running HSDir relays to measure longevity of onion services
-
-*   [request](/trsb/2017-02-request.txt)
-*   [request pdf](/trsb/2017-02-request.pdf)
-*   [response](/trsb/2017-02-response.txt)
-*   [research project page](http://tor.ccs.neu.edu/)
+<a href="/trsb/2017-02-request.txt" class="badge badge-primary">Request</a>
+<a href="/trsb/2017-02-request.pdf" class="badge badge-primary">Request (PDF)</a>
+<a href="/trsb/2017-02-response.txt" class="badge badge-success">Response</a>
+<a href="http://tor.ccs.neu.edu/" class="badge badge-secondary">Website</a>
 
 2017-03: Running middle relays to measure onion service popularity
-
-*   [request](/trsb/2017-03-request.txt)
-*   [response](/trsb/2017-03-response.txt)
-*   [research project page](https://onionpop.github.io/)
-*   [Accepted paper forthcoming at NDSS 2018]
+<a href="/trsb/2017-03-request.txt" class="badge badge-primary">Request</a>
+<a href="/trsb/2017-03-response.txt" class="badge badge-success">Response</a>
+<a href="https://onionpop.github.io/" class="badge badge-secondary">Website</a>
+<a href="https://www.freehaven.net/anonbib/#insidejob-ndss2018" class="badge badge-secondary">Publication</a>
 
 2017-04: [under review]
 
