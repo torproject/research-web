@@ -105,7 +105,6 @@ clarifications.
 We are publishing safety board cases in this section, to help you craft your own submission. Note that some cases are still private, for example because the researchers are waiting for their paper to become public first.
 
 2016-01: Studying reachability of Tor Browser's default bridges
-
 <a href="/trsb/2016-01-request.txt" class="badge badge-primary">Request</a>
 <a href="/trsb/2016-01-questionnaire.txt" class="badge badge-info">Questionnaire</a>
 <a href="/trsb/2016-01-questionnaire-answers.txt" class="badge badge-primary">Questionnaire Answers</a>
