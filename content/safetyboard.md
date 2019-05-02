@@ -114,7 +114,6 @@ We are publishing safety board cases in this section, to help you craft your own
 2016-02: [still anonymized during paper review]
 
 2016-03: Understanding "dark web" cultures and communities
-
 <a href="/trsb/2016-03-request.txt" class="badge badge-primary">Request</a>
 <a href="/trsb/2016-03-response.txt" class="badge badge-success">Response</a>
 
