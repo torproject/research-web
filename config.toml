@@ -22,10 +22,16 @@ theme = "torproject"
   weight = -180
 
 [[menu.main]]
-  name = "Research Ideas"
-  title = "Research Ideas with Tor"
+  name = "Ideas"
+  title = "Tor Research Ideas"
   url = "/ideas"
   weight = -170
+
+[[menu.main]]
+  name = "Tools"
+  title = "Tor Research Tools"
+  url = "/tools"
+  weight = -165
 
 [[menu.main]]
   name = "Tech Reports"
