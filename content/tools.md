@@ -51,10 +51,11 @@ the Tor process or to instruct it to perform tasks.
   [Orbot](https://play.google.com/store/apps/details?id=org.torproject.android)
   Android app.
 
-## Parsing Libraries
+## Descriptor Libraries
 
-The following libraries help you with parsing Tor network data, either from a
-directory authority or the
+The following libraries help you with parsing and generating Tor network
+related data formats. Descriptors may be obtained either from a directory
+authority, directory cache, local client or the
 [CollecTor](https://metrics.torproject.org/collector.html) service:
 
 * [Tor Metrics Library](https://metrics.torproject.org/metrics-lib.html) is a
@@ -63,5 +64,8 @@ directory authority or the
   formats.
 * [Stem](https://stem.torproject.org/) is a Python library that includes
   parsers for Tor-specific data formats.
+* [leekspin](https://github.com/isislovecruft/leekspin) is a tool for
+  generating mock Onion Router (OR) descriptors such as those used by relays,
+  bridges, and onion services.
 * [Zoossh](https://github.com/NullHypothesis/zoossh) is a parser written in Go
   for Tor-specific data formats.
