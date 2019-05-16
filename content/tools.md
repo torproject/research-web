@@ -44,6 +44,8 @@ the Tor process or to instruct it to perform tasks.
 
 * [Stem](https://stem.torproject.org/) is a Python controller library for Tor,
   used in the [Nyx](https://nyx.torproject.org/) monitor application.
+* [txtorcon](https://github.com/meejah/txtorcon) is a Python Twisted controller
+  library for Tor.
 * [jtorctl](https://github.com/guardianproject/jtorctl) is a Java controller
   library for Tor, used in the
   [Orbot](https://play.google.com/store/apps/details?id=org.torproject.android)
