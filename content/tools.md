@@ -69,3 +69,10 @@ authority, directory cache, local client or the
   bridges, and onion services.
 * [Zoossh](https://github.com/NullHypothesis/zoossh) is a parser written in Go
   for Tor-specific data formats.
+
+## Add your tool
+
+If you have developed a tool that may be useful to other researchers working on
+Tor, then please send a mail to
+[research@torproject.org](mailto:research@torproject.org) with the details you
+would like to have added.
