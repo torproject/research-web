@@ -16,29 +16,22 @@ Build and serve on localhost
 make server
 ```
 
-Deploy your changes to staging
-------------------------------
-
-```
-make staging
-```
-
-Your changes will shortly appear at https://research-staging.torproject.org/.
-
-Deploy your changes to production
----------------------------------
-
-```
-make production
-```
-
-Your changes will shortly appear at https://research.torproject.org/.
-
 Adding a technical report
 -------------------------
 
 To add a technical report, place the final PDF to be published in the
 `static/techreports/` directory. Add an entry to the BibTeX file
 `techreports.bib`. This change will be made when you next run `make
-server|staging|production` or you can perform only the update step by running
-the `update-techreports-html` script.
+server` or you can perform only the update step by running the
+`update-techreports-html` script.
+
+Deploy your changes to production/staging
+-----------------------------------------
+
+Simply push to git on the master or staging branches, Your changes will shortly
+appear at https://research[-staging].torproject.org/.
+
+The relevant jenkins jobs are:
+
+https://jenkins.torproject.org/job/hugo-website-research/
+https://jenkins.torproject.org/job/hugo-website-research-install/
