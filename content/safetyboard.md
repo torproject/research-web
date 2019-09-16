@@ -123,6 +123,7 @@ We are publishing safety board cases in this section, to help you craft your own
 <a href="/trsb/2017-02-request.pdf" class="badge badge-primary">Request (PDF)</a>
 <a href="/trsb/2017-02-response.txt" class="badge badge-success">Response</a>
 <a href="http://tor.ccs.neu.edu/" class="badge badge-secondary">Website</a>
+<a href="https://arxiv.org/abs/1909.03576" class="badge badge-secondary">Paper draft</a>
 
 2017-03: Running middle relays to measure onion service popularity
 <a href="/trsb/2017-03-request.txt" class="badge badge-primary">Request</a>
