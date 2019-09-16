@@ -143,16 +143,20 @@ We are publishing safety board cases in this section, to help you craft your own
 
 The current members of the board are:
 
+*   Cecylia Bocovich
 *   George Danezis
 *   Roger Dingledine
 *   Tariq Elahi
 *   Ian Goldberg
 *   Rob Jansen
 *   Aaron Johnson
+*   Chelsea Komlo
 *   Damon McCoy
 *   Wendy Seltzer
 *   Micah Sherr
 *   Paul Syverson
+*   T Wilson-Brown
+*   Philipp Winter
 
 <a id="faq"></a>
 
