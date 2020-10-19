@@ -155,6 +155,7 @@ The current members of the board are:
 *   Wendy Seltzer
 *   Micah Sherr
 *   Paul Syverson
+*   Justin Tracey
 *   T Wilson-Brown
 *   Philipp Winter
 
